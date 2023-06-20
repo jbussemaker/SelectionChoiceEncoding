@@ -18,13 +18,13 @@ The *influence matrix* is an `n_nodes x n_nodes` matrix, specifying for each nod
 - On the diagonal, the initial node status is defined
 - On the off-diagonal, the influence of node `i` on node `j` is defined
 
-| Status code | Diagonal             | Off-diagonal               |
-|-------------|----------------------|----------------------------|
-| 0           | Not selected         | No influence               |
-| 1           | Selected/included    | Node `i` selects node `j`  |
-| 2           | Removed              | Node `i` removes node `j`` |
-| 3           | Invalid architecture |                            |
-| 4           | Choice made          |                            |
+| Status code | Diagonal             | Off-diagonal              |
+|-------------|----------------------|---------------------------|
+| 0           | Not selected         | No influence              |
+| 1           | Selected/included    | Node `i` selects node `j` |
+| 2           | Removed              | Node `i` removes node `j` |
+| 3           | Invalid architecture |                           |
+| 4           | Choice made          |                           |
 
 The *choice constraint map* (optional) defines for each choice-option pair which other choice-option pairs are removed.
 This is used for modeling choice linking and other constraints.
