@@ -89,7 +89,7 @@ class SelectionChoiceEncoder:
         """Number of design vectors possible to formulate from the design variables"""
         if self.n_valid <= 1:
             return self.n_valid
-        return int(np.prod(self.design_variable_options, dtype=np.float))
+        return int(np.prod(self.design_variable_options, dtype=float))
 
     @cached_property
     def design_variable_is_forced(self) -> List[bool]:
