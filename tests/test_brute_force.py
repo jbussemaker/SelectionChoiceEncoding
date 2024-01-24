@@ -24,6 +24,7 @@ SOFTWARE.
 """
 import os
 import glob
+import pytest
 import numpy as np
 from sel_choice_enc.util import *
 from sel_choice_enc.brute_force import BruteForceSelectionChoiceEncoder
@@ -33,6 +34,7 @@ def _encoder_factory(**kwargs):
     return BruteForceSelectionChoiceEncoder(**kwargs)
 
 
+@pytest.mark.skipif(int(os.getenv('RUN_SLOW_TESTS', 0)) != 1, reason='Set RUN_SLOW_TESTS=1 to run slow tests')
 def test_all(case_data_path, other_data_path):
     for file in glob.glob(case_data_path+'/case_*.pkl'):
         print(f'Testing: {os.path.basename(file)}')
